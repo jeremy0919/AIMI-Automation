@@ -16,17 +16,36 @@ module.exports = function(grunt) {
           }
         }
       },
-  
+      concat: {
+        dist: {
+            src: ['src/js/*.js'],
+            dest: 'dist/js/script.js',
+        },
+    },
+    uglify: {
+        dist: {
+            files: {
+                'dist/js/script.min.js': ['dist/js/script.js']
+            }
+        }
+    },
       // Watch task
       watch: {
-        css: {
-          files: 'src/**/*.scss',
-          tasks: ['sass'],
-          options: {
-            livereload: true,
-          },
+        sass: {
+            files: ['src/scss/**/*.scss'],
+            tasks: ['sass'],
+            options: {
+                livereload: true
+            }
         },
-      },
+        js: {
+            files: ['src/js/*.js'],
+            tasks: ['concat', 'uglify'],
+            options: {
+                livereload: true
+            }
+        }
+    }
     });
   
     // Load plugins
@@ -35,11 +54,11 @@ module.exports = function(grunt) {
   
     // Default task
    // grunt.registerTask('default', ['sass', 'watch']); // task to be run
-   grunt.registerTask('run', function(){
-    console.log("I am running")
-   })
-   grunt.registerTask('sleep', function(){
-    console.log("I am sleeping")
-   })
+   grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+    grunt.registerTask('default', ['sass', 'concat', 'uglify', 'watch']);
   };
   

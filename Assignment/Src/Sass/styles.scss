@@ -1,0 +1,16 @@
+// styles.scss
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Custom checkbox styling
+.form-check-input {
+    color: red;
+    padding:10px   
+    // Your custom styling for the checkbox input
+}
+
+.form-check-label {
+    padding:10px    
+    // Your custom styling for the label (for alignment, padding, etc.)
+}
