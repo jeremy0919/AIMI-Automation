@@ -1,5 +1,82 @@
-//Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope LocalMachine
+
 module.exports = function(grunt) {
+
+  // Project configuration.
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+
+    // Concatenate and minify JavaScript files
+    concat: {
+      dist: {
+        src: ['src/js/*.js'],
+        dest: 'dist/js/script.js'
+      }
+    },
+    uglify: {
+      dist: {
+        files: {
+          'dist/js/script.min.js': ['dist/js/script.js']
+        }
+      }
+    },
+
+    // Compile SCSS to CSS
+    sass: {
+      dist: {
+        files: {
+          'dist/css/styles.css': 'src/scss/styles.scss'
+        }
+      }
+    },
+
+    // Copy HTML files
+    copy: {
+      main: {
+        src: 'src/index.html',
+        dest: 'dist/index.html'
+      }
+    },
+
+    // Watch for changes
+    watch: {
+      scripts: {
+        files: ['src/js/*.js'],
+        tasks: ['concat', 'uglify'],
+        options: {
+          spawn: false,
+        },
+      },
+      styles: {
+        files: ['src/scss/*.scss'],
+        tasks: ['sass'],
+        options: {
+          spawn: false,
+        },
+      },
+      html: {
+        files: ['src/index.html'],
+        tasks: ['copy'],
+        options: {
+          spawn: false,
+        },
+      },
+    },
+  });
+
+  // Load plugins
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  // Default task(s).
+  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'copy', 'watch']);
+};
+
+
+//Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope LocalMachine
+/*module.exports = function(grunt) {
    
     grunt.initConfig({// grunt object ie config
       pkg: grunt.file.readJSON('package.json'), // grunt object
@@ -32,7 +109,7 @@ module.exports = function(grunt) {
       // Watch task
       watch: {
         sass: {
-            files: ['src/scss/**/*.scss'],
+            files: ['src/scss/***.scss'],
             tasks: ['sass'],
             options: {
                 livereload: true
@@ -61,4 +138,4 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['sass', 'concat', 'uglify', 'watch']);
   };
-  
+  */
