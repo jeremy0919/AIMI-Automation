@@ -1,0 +1,22 @@
+.form-check-input {
+  flex: 1; }
+
+.form-check-input {
+  border-color: red; }
+  .form-check-input input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px; }
+  .form-check-input input[type="checkbox"]:checked {
+    border-color: purple;
+    background-color: purple; }
+  .form-check-input input[type="checkbox"]:focus + span {
+    outline: 2px solid red; }
+  .form-check-input input[type="checkbox"]:focus {
+    outline: none; }
+
+/*# sourceMappingURL=styles.css.map */

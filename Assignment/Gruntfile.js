@@ -24,7 +24,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'dist/css/styles.css': 'src/scss/styles.scss'
+          'dist/Css/styles.css': 'Src/Sass/styles.scss'
         }
       }
     },
@@ -47,10 +47,10 @@ module.exports = function(grunt) {
         },
       },
       styles: {
-        files: ['src/scss/*.scss'],
+        files: ['src/Sass/*.scss'],
         tasks: ['sass'],
         options: {
-          spawn: false,
+          spawn: true,
         },
       },
       html: {
@@ -64,14 +64,12 @@ module.exports = function(grunt) {
   });
 
   // Load plugins
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'copy', 'watch']);
+  grunt.registerTask('default', [ 'sass', 'watch']);
 };
 
 

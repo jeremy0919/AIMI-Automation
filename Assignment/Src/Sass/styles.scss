@@ -1,16 +1,42 @@
 // styles.scss
-
+@import "Mixins";
+@import "Variables";
+@import "Reset";
 // Import Bootstrap
-@import "bootstrap/scss/bootstrap";
+//@import '../../../node_modules/bootstrap/scss/bootstrap';
+//functions 
+
 
 // Custom checkbox styling
-.form-check-input {
-    color: red;
-    padding:10px   
-    // Your custom styling for the checkbox input
+.form-check-input{
+    flex:1
 }
 
-.form-check-label {
-    padding:10px    
-    // Your custom styling for the label (for alignment, padding, etc.)
-}
+
+.form-check-input {
+  
+    border-color: red;
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+  
+    input[type="checkbox"]:checked {
+        border-color: purple;
+      background-color: purple; // Example color for checked state
+    }
+  
+    input[type="checkbox"]:focus + span {
+      outline: 2px solid red; // Example outline style
+    }
+  
+    input[type="checkbox"]:focus {
+      outline: none; // Hide default focus outline
+    }
+  }
+  
