@@ -2,11 +2,13 @@
 function updateCheckboxSize() {
     const checkboxes = document.querySelectorAll('.custom-checkbox input[type="checkbox"]');
     const labels = document.querySelectorAll('.custom-checkbox label');
+    let extraB = document.querySelectorAll('.ExtraBorder')
     let width;
     let height;  
     if (window.innerWidth>=1080){ // typical screen width
         width = (window.innerWidth / 4.3); 
         height = (window.innerWidth / 4.3);
+        
     }
     else if (window.innerWidth>=760){ // typical tablet width
         width = (window.innerWidth / 2.1); 
@@ -29,6 +31,10 @@ function updateCheckboxSize() {
       label.style.height = height + 'px';
     
     });
+    extraB.forEach((extra) =>{
+      extra.style.height=(height+2)+'px';
+      extra.style.width=(width+2)+'px';
+    })
   }
   
 
