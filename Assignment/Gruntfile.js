@@ -8,14 +8,14 @@ module.exports = function(grunt) {
     // Concatenate and minify JavaScript files
     concat: {
       dist: {
-        src: ['src/js/*.js'],
-        dest: 'dist/js/script.js'
+        src: ['src/Javascript/*.js'],
+        dest: 'dist/Js/script.js'
       }
     },
     uglify: {
       dist: {
         files: {
-          'dist/js/script.min.js': ['dist/js/script.js']
+          'Src/Javascript/script.min.js': 'dist/js/script.js'
         }
       }
     },
@@ -40,10 +40,10 @@ module.exports = function(grunt) {
     // Watch for changes
     watch: {
       scripts: {
-        files: ['src/js/*.js'],
+        files: ['Src/Javascript/*.js'],
         tasks: ['concat', 'uglify'],
         options: {
-          spawn: false,
+          spawn: true,
         },
       },
       styles: {
@@ -66,8 +66,9 @@ module.exports = function(grunt) {
   // Load plugins
 
   grunt.loadNpmTasks('grunt-contrib-sass');
+  //grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-
+  //grunt.loadNpmTasks('grunt-contrib-concat');
   // Default task(s).
   grunt.registerTask('default', [ 'sass', 'watch']);
 };

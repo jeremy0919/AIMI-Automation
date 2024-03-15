@@ -1,59 +1,5 @@
-/*
-
-.form-check-input {
-  appearance: none;
-  border-color: red;
-
-  &:focus-within {
-    border-color: red; /* Change to your desired focus color 
-    outline-color: red;
-  }
-
-  &:checked {
-    border: 2px solid red;
-
-    &::after {
-      content: '';
-      position: absolute;
-      height: 2px;
-      background: red;
-    }
-
-    &::before {
-      content: '';
-      width: 6px;
-      top: 11px;
-      left: 3px;
-      // transform: rotate(44deg);
-    }
-  }
-}
-.custom-checkbox label {
- /* Ensure the background image covers the entire area 
-}*/
-.custom-checkbox input[type="checkbox"] {
-  /* Adjust width and height to fill the column */
-  width: 100%;
-  height: 100%;
-  /* Remove border and padding to fill the space */
-  border: none;
-  padding: 0;
-  /* Ensure the checkbox is positioned properly */
-  position: relative;
-  /* Hide the default checkbox */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none; }
-.custom-checkbox label {
-  /* Adjust width and height to fill the column */
-  width: 100%;
-  height: 100%;
-  /* Ensure the label covers the entire column */
-  display: block;
-  /* Add background image styles */
-  background-size: cover;
-  background-position: center;
-  /* Add other styles as needed */ }
+body {
+  background-color: #D3d3d3; }
 
 .custom-checkbox input[type="checkbox"] {
   appearance: none;
@@ -63,7 +9,6 @@
   height: 0;
   margin: 0;
   padding: 0;
-  border: none;
   overflow: hidden;
   position: absolute;
   clip: rect(0, 0, 0, 0); }
@@ -71,91 +16,31 @@
 .custom-checkbox label {
   background-size: contain;
   overflow: hidden;
-  /* Adjust image size based on screen size */
+  padding: 5px;
+  margin: 5px;
+  width: auto;
+  height: auto;
   display: inline-block;
   background-size: cover;
   background-position: center; }
-  @media screen and (max-width: 600px) {
-    .custom-checkbox label {
-      /* Small screens */
-      width: 100px;
-      /* Adjust as needed */
-      height: 100px;
-      /* Adjust as needed */ } }
-  @media screen and (min-width: 600px) and (max-width: 812px) {
-    .custom-checkbox label {
-      /* Medium screens */
-      width: 150px;
-      /* Adjust as needed */
-      height: 150px;
-      /* Adjust as needed */ } }
-  @media screen and (min-width: 812px) and (max-width: 1025px) {
-    .custom-checkbox label {
-      /* Medium screens */
-      width: 200px;
-      /* Adjust as needed */
-      height: 200px;
-      /* Adjust as needed */ } }
-  @media screen and (min-width: 1025px) and (max-width: 1225px) {
-    .custom-checkbox label {
-      /* Large screens */
-      width: 250px;
-      /* Adjust as needed */
-      height: 250px;
-      /* Adjust as needed */ } }
-  @media screen and (min-width: 1225px) {
-    .custom-checkbox label {
-      /* Large screens */
-      width: 300px;
-      /* Adjust as needed */
-      height: 300px;
-      /* Adjust as needed */ } }
 
 .custom-checkbox input[type="checkbox"]:checked + label {
-  border: 2px solid red;
-  /* Highlight border color */ }
+  border: 4px solid red; }
 
-/*
-.form-check-input {
-  appearance: none;
-  border-color: red;
+.custom-checkbox input[type="checkbox"] + label {
+  border: 4.5px solid white; }
 
-  &::selection {
-  background-color: red; 
-}
-    &:checked {
-      border: 2px solid #FFF;
-
-      &::after {
-        content: '';
-        position: absolute;
-        height: 2px;
-        background: red;
-      }
-
-      &::before {
-        content: '';
-        width: 6px;
-        top: 11px;
-        left: 3px;
-        // transform: rotate(44deg);
-      }
-    }
-  
-}
-
-  
-    input[type="checkbox"]:checked {
-        border-color: purple;
-      background-color: purple; // Example color for checked state
-    }
-  
-    input[type="checkbox"]:focus + span {
-      outline: 2px solid red; // Example outline style
-    }
-  
-    input[type="checkbox"]:focus {
-      outline: none; // Hide default focus outline
-    }*/
+@media (max-width: 760px) {
+  .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%; } }
+@media (max-width: 1080px) {
+  .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%; } }
+@media (min-width: 1081px) {
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%; } }
 
 /*# sourceMappingURL=styles.css.map */
