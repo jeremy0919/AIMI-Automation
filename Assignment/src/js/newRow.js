@@ -1,5 +1,5 @@
 window.addEventListener('scroll', function() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) { // set to generate new rows when 100 px from bottom of the screen
       loadMoreRows();
     }
   });
@@ -7,7 +7,7 @@ window.addEventListener('scroll', function() {
   function loadMoreRows() {
     const container = document.getElementById('container');
     const existingRows = document.querySelectorAll('.row');
-    const randomRowIndex = Math.floor(Math.random() * Math.min(existingRows.length, 5)); // Generate a random index within the range of 0 to 4
+    const randomRowIndex = Math.floor(Math.random() * Math.min(existingRows.length, 5)); // Generate a random index within the range of 0 to 4 since thats my preset rows
     const randomRow = existingRows[randomRowIndex];
     const newRow = randomRow.cloneNode(true); // Clone random existing row
     

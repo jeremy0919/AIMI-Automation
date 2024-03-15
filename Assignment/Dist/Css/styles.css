@@ -45,13 +45,10 @@ body {
   .col-md-3 {
     flex: 0 0 25%;
     max-width: 25%; } }
-/* Square Icon Style */
 .square-icon {
   position: absolute;
   top: 5px;
-  /* Adjust as needed */
   left: 5px;
-  /* Adjust as needed */
   width: 20px;
   height: 20px;
   border: 1px dashed red; }

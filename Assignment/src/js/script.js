@@ -1,5 +1,5 @@
 
-function updateCheckboxSize() {
+function updateCheckboxSize() { // dynamically adjusts sizing with screen size
     const checkboxes = document.querySelectorAll('.custom-checkbox input[type="checkbox"]');
     const labels = document.querySelectorAll('.custom-checkbox label');
     let extraB = document.querySelectorAll('.ExtraBorder')
