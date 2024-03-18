@@ -3,8 +3,7 @@ Linkden: https://www.linkedin.com/in/jeremiah-davis-336770272/
 
 
 How to run:
-    1: navigate to assignments/dist and open index.html
-    2: Nothing else should be needed to run
+    1: navigate to assignments/dist and open index.html in a web browser
 
 How to modify:
     1: ensure ruby is isntalled
